@@ -4,6 +4,8 @@ Useful tools for building PHP libraries.
 
 ## Pipes
 ```php
+namespace DecodeLabs\Gadgets;
+
 interface Pipe
 {
     public function pipe(callable $callback): Pipe;
@@ -49,3 +51,35 @@ $test
         // This get called otherwise
     });
 ```
+
+
+## Constraints
+```php
+namespace DecodeLabs\Gadgets\Constraint;
+
+interface Disableable
+{
+    public function isDisabled(): bool;
+    public function setDisabled(bool $disabled): Disableable;
+}
+
+interface Nullable
+{
+    public function isNullable(): bool;
+    public function setNullable(bool $nullable): Nullable;
+}
+
+interface ReadOnly
+{
+    public function isReadOnly(): bool;
+    public function setReadOnly(bool $readOnly): ReadOnly;
+}
+
+interface Requirable
+{
+    public function isRequired(): bool;
+    public function setRequired(bool $required): Requirable;
+}
+```
+
+Add common constraints to your objects.
