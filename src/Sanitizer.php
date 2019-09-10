@@ -56,6 +56,12 @@ class Sanitizer implements Requirable
             return null;
         }
 
+        if (!is_numeric($value)) {
+            throw \Glitch::EUnexpectedValue(
+                'Value is not numeric', null, $value
+            );
+        }
+
         return (int)$value;
     }
 
@@ -66,6 +72,12 @@ class Sanitizer implements Requirable
     {
         if (null === ($value = $this->prepareValue($default))) {
             return null;
+        }
+
+        if (!is_numeric($value)) {
+            throw \Glitch::EUnexpectedValue(
+                'Value is not numeric', null, $value
+            );
         }
 
         return (float)$value;
@@ -86,18 +98,42 @@ class Sanitizer implements Requirable
     /**
      * Get value as slug string
      */
-    /*
     public function asSlug($default=null): ?string
     {
-        if(null === ($value = $this->prepareValue($default))) {
+        if (null === ($value = $this->prepareValue($default))) {
             return null;
         }
 
-        return (int)$value;
+        $value = strtolower($value);
 
-        return Formatter::slug($this->prepareValue($default));
+        if (!preg_match('/^[a-z0-9]([a-z0-9-_]*[a-z0-9])?$/', $value)) {
+            throw \Glitch::EUnexpectedValue(
+                'Value is not a valid slug', null, $value
+            );
+        }
+
+        return $value;
     }
-    */
+
+    /**
+     * Get value as Guid string
+     */
+    public function asGuid($default=null): ?string
+    {
+        if (null === ($value = $this->prepareValue($default))) {
+            return null;
+        }
+
+        $value = strtolower($value);
+
+        if (!preg_match('/^[a-z0-9]{8}-(?:[a-z0-9]{4}-){3}[a-z0-9]{12}$/', $value)) {
+            throw \Glitch::EUnexpectedValue(
+                'Value is not a valid GUID', null, $value
+            );
+        }
+
+        return $value;
+    }
 
     /**
      * Prepare output value
