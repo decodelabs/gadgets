@@ -1,8 +1,8 @@
 # Gadgets
-## Useful tools for building PHP libraries
+Useful tools for building PHP libraries.
 
 
-### Pipes
+## Pipes
 ```php
 interface Pipe
 {
