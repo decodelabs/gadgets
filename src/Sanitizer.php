@@ -30,7 +30,7 @@ class Sanitizer implements Requirable
     /**
      * Get original value
      */
-    public function asRaw()
+    public function asIs()
     {
         return $this->value;
     }
