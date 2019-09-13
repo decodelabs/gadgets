@@ -57,7 +57,7 @@ class Sanitizer implements Requirable
         }
 
         if (!is_numeric($value)) {
-            throw \Glitch::EUnexpectedValue(
+            throw Glitch::EUnexpectedValue(
                 'Value is not numeric', null, $value
             );
         }
@@ -75,7 +75,7 @@ class Sanitizer implements Requirable
         }
 
         if (!is_numeric($value)) {
-            throw \Glitch::EUnexpectedValue(
+            throw Glitch::EUnexpectedValue(
                 'Value is not numeric', null, $value
             );
         }
@@ -107,7 +107,7 @@ class Sanitizer implements Requirable
         $value = strtolower($value);
 
         if (!preg_match('/^[a-z0-9]([a-z0-9-_]*[a-z0-9])?$/', $value)) {
-            throw \Glitch::EUnexpectedValue(
+            throw Glitch::EUnexpectedValue(
                 'Value is not a valid slug', null, $value
             );
         }
@@ -127,7 +127,7 @@ class Sanitizer implements Requirable
         $value = strtolower($value);
 
         if (!preg_match('/^[a-z0-9]{8}-(?:[a-z0-9]{4}-){3}[a-z0-9]{12}$/', $value)) {
-            throw \Glitch::EUnexpectedValue(
+            throw Glitch::EUnexpectedValue(
                 'Value is not a valid GUID', null, $value
             );
         }
@@ -147,7 +147,7 @@ class Sanitizer implements Requirable
         }
 
         if ($this->required && $value === null) {
-            throw \Glitch::EUnexpectedValue(
+            throw Glitch::EUnexpectedValue(
                 'Value is required'
             );
         }
@@ -163,7 +163,7 @@ class Sanitizer implements Requirable
         $value = $callback($this->value);
 
         if ($this->required && $value === null) {
-            throw \Glitch::EUnexpectedValue(
+            throw Glitch::EUnexpectedValue(
                 'Value is required'
             );
         }
