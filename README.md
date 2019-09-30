@@ -106,3 +106,7 @@ $test = new class {
 $myString = $test->sanitizeValue()->asString(); // All good
 $myInt = $test->sanitizeValue()->asInt(); // Will try to convert to int
 ```
+
+
+## Licensing
+Gadgets is licensed under the MIT License. See [LICENSE](./LICENSE) for the full license text.
