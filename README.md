@@ -83,3 +83,30 @@ interface Requirable
 ```
 
 Add common constraints to your objects.
+
+
+## Sanitizer
+Add basic input value sanitizing to your objects by returning a <code>Sanitizer</code>.
+
+```php
+use DecodeLabs\Gadgets\Sanitizer;
+
+$test = new class {
+
+    public $value = 'my value';
+
+    public function sanitizeValue(bool $required=true): Sanitizer
+    {
+        return new Sanitizer($this->value, $required);
+    }
+}
+
+
+
+$myString = $test->sanitizeValue()->asString(); // All good
+$myInt = $test->sanitizeValue()->asInt(); // Will try to convert to int
+```
+
+
+## Licensing
+Gadgets is licensed under the MIT License. See [LICENSE](./LICENSE) for the full license text.
