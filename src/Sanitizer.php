@@ -8,7 +8,6 @@ namespace DecodeLabs\Gadgets;
 
 use DecodeLabs\Gadgets\Constraint\Requirable;
 use DecodeLabs\Gadgets\Constraint\RequirableTrait;
-use Glitch;
 
 class Sanitizer implements Requirable
 {
