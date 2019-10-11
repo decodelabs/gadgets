@@ -6,8 +6,6 @@
 declare(strict_types=1);
 namespace DecodeLabs\Gadgets;
 
-//use Df\Flex\Formatter;
-
 use DecodeLabs\Gadgets\Constraint\Requirable;
 use DecodeLabs\Gadgets\Constraint\RequirableTrait;
 
