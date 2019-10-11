@@ -6,12 +6,12 @@
 declare(strict_types=1);
 namespace DecodeLabs\Gadgets;
 
-trait PipeTrait
+trait ThenTrait
 {
     /**
      * Pass parent to callback
      */
-    public function pipe(callable $callback): Pipe
+    public function then(callable $callback): Then
     {
         $callback($this);
         return $this;
@@ -21,7 +21,7 @@ trait PipeTrait
     /**
      * For each value in $values, call callback with parent
      */
-    public function pipeEach(array $values, callable $callback): Pipe
+    public function thenEach(array $values, callable $callback): Then
     {
         foreach ($values as $key => $value) {
             $callback($this, $value, $key);
@@ -34,7 +34,7 @@ trait PipeTrait
     /**
      * If $truth, call $yes, otherwise call $no
      */
-    public function when($truth, callable $yes, callable $no=null): Pipe
+    public function thenWhen($truth, callable $yes, callable $no=null): Then
     {
         if ($truth) {
             $yes($this, $truth);
@@ -49,7 +49,7 @@ trait PipeTrait
     /**
      * If !$truth, call $no, otherwise call $yes
      */
-    public function unless($truth, callable $no, callable $yes=null): Pipe
+    public function thenUnless($truth, callable $no, callable $yes=null): Then
     {
         if (!$truth) {
             $no($this, $truth);
