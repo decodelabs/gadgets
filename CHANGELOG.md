@@ -1,3 +1,6 @@
+## v0.6.0 (2019-10-11)
+* Renamed Pipe to Then
+
 ## v0.5.1 (2019-10-04)
 * Added Sanitizer
 * Updated Exceptions for Glitch Facade
