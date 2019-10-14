@@ -9,6 +9,8 @@ namespace DecodeLabs\Gadgets;
 use DecodeLabs\Gadgets\Constraint\Requirable;
 use DecodeLabs\Gadgets\Constraint\RequirableTrait;
 
+use DecodeLabs\Glitch;
+
 class Sanitizer implements Requirable
 {
     use RequirableTrait;
@@ -140,7 +142,7 @@ class Sanitizer implements Requirable
     {
         $value = $this->value ?? $default;
 
-        if ($value instanceof \Callback) {
+        if ($value instanceof \Closure) {
             $value = $value();
         }
 
