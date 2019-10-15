@@ -6,10 +6,10 @@
 declare(strict_types=1);
 namespace DecodeLabs\Gadgets;
 
-//use Df\Flex\Formatter;
-
 use DecodeLabs\Gadgets\Constraint\Requirable;
 use DecodeLabs\Gadgets\Constraint\RequirableTrait;
+
+use DecodeLabs\Glitch;
 
 class Sanitizer implements Requirable
 {
@@ -142,7 +142,7 @@ class Sanitizer implements Requirable
     {
         $value = $this->value ?? $default;
 
-        if ($value instanceof \Callback) {
+        if ($value instanceof \Closure) {
             $value = $value();
         }
 
