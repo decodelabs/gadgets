@@ -34,7 +34,7 @@ trait ThenTrait
     /**
      * If $truth, call $yes, otherwise call $no
      */
-    public function thenWhen($truth, callable $yes, callable $no=null): Then
+    public function thenIf($truth, callable $yes, callable $no=null): Then
     {
         if ($truth) {
             $yes($this, $truth);
