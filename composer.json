@@ -4,12 +4,10 @@
     "type": "library",
     "keywords": ["library", "tools"],
     "license": "MIT",
-    "authors": [
-        {
-            "name": "Tom Wright",
-            "email": "tom@inflatablecookie.com"
-        }
-    ],
+    "authors": [{
+        "name": "Tom Wright",
+        "email": "tom@inflatablecookie.com"
+    }],
     "require": {
         "php": "^7.2",
         "decodelabs/glitch": "<2"
@@ -27,7 +25,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-develop": "0.x-dev"
+            "dev-develop": "0.6.x-dev"
         }
     }
 }
