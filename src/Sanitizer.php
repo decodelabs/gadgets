@@ -9,7 +9,7 @@ namespace DecodeLabs\Gadgets;
 use DecodeLabs\Gadgets\Constraint\Requirable;
 use DecodeLabs\Gadgets\Constraint\RequirableTrait;
 
-use DecodeLabs\Glitch;
+use DecodeLabs\Exceptional;
 
 class Sanitizer implements Requirable
 {
@@ -57,7 +57,7 @@ class Sanitizer implements Requirable
         }
 
         if (!is_numeric($value)) {
-            throw Glitch::EUnexpectedValue(
+            throw Exceptional::UnexpectedValue(
                 'Value is not numeric', null, $value
             );
         }
@@ -75,7 +75,7 @@ class Sanitizer implements Requirable
         }
 
         if (!is_numeric($value)) {
-            throw Glitch::EUnexpectedValue(
+            throw Exceptional::UnexpectedValue(
                 'Value is not numeric', null, $value
             );
         }
@@ -107,7 +107,7 @@ class Sanitizer implements Requirable
         $value = strtolower($value);
 
         if (!preg_match('/^[a-z0-9]([a-z0-9-_]*[a-z0-9])?$/', $value)) {
-            throw Glitch::EUnexpectedValue(
+            throw Exceptional::UnexpectedValue(
                 'Value is not a valid slug', null, $value
             );
         }
@@ -127,7 +127,7 @@ class Sanitizer implements Requirable
         $value = strtolower($value);
 
         if (!preg_match('/^[a-z0-9]{8}-(?:[a-z0-9]{4}-){3}[a-z0-9]{12}$/', $value)) {
-            throw Glitch::EUnexpectedValue(
+            throw Exceptional::UnexpectedValue(
                 'Value is not a valid GUID', null, $value
             );
         }
@@ -147,7 +147,7 @@ class Sanitizer implements Requirable
         }
 
         if ($this->required && $value === null) {
-            throw Glitch::EUnexpectedValue(
+            throw Exceptional::UnexpectedValue(
                 'Value is required'
             );
         }
@@ -163,7 +163,7 @@ class Sanitizer implements Requirable
         $value = $callback($this->value);
 
         if ($this->required && $value === null) {
-            throw Glitch::EUnexpectedValue(
+            throw Exceptional::UnexpectedValue(
                 'Value is required'
             );
         }
