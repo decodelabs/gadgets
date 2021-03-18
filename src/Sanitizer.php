@@ -9,6 +9,8 @@ declare(strict_types=1);
 
 namespace DecodeLabs\Gadgets;
 
+use Closure;
+
 use DecodeLabs\Exceptional;
 use DecodeLabs\Gadgets\Constraint\Requirable;
 use DecodeLabs\Gadgets\Constraint\RequirableTrait;
@@ -152,7 +154,7 @@ class Sanitizer implements Requirable
     {
         $value = $this->value ?? $default;
 
-        if ($value instanceof \Closure) {
+        if ($value instanceof Closure) {
             $value = $value();
         }
 
