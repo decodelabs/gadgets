@@ -1,3 +1,9 @@
+## v0.7.0 (2021-03-18)
+* Enabled PHP8 testing
+* Removed Then interface (for Fluidity)
+* Applied full PSR12 standards
+* Added PSR12 check to Travis build
+
 ## v0.6.4 (2020-10-02)
 * Removed glitch dependency
 

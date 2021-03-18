@@ -1,15 +1,17 @@
 <?php
+
 /**
- * This file is part of the Gadgets package
+ * @package Gadgets
  * @license http://opensource.org/licenses/MIT
  */
+
 declare(strict_types=1);
+
 namespace DecodeLabs\Gadgets;
 
+use DecodeLabs\Exceptional;
 use DecodeLabs\Gadgets\Constraint\Requirable;
 use DecodeLabs\Gadgets\Constraint\RequirableTrait;
-
-use DecodeLabs\Exceptional;
 
 class Sanitizer implements Requirable
 {
@@ -20,7 +22,7 @@ class Sanitizer implements Requirable
     /**
      * Init with raw value
      */
-    public function __construct($value, bool $required=true)
+    public function __construct($value, bool $required = true)
     {
         $this->value = $value;
         $this->required = $required;
@@ -38,7 +40,7 @@ class Sanitizer implements Requirable
     /**
      * Get value as boolean
      */
-    public function asBool($default=null): ?bool
+    public function asBool($default = null): ?bool
     {
         if (null === ($value = $this->prepareValue($default))) {
             return null;
@@ -50,7 +52,7 @@ class Sanitizer implements Requirable
     /**
      * Get value as int
      */
-    public function asInt($default=null): ?int
+    public function asInt($default = null): ?int
     {
         if (null === ($value = $this->prepareValue($default))) {
             return null;
@@ -58,7 +60,9 @@ class Sanitizer implements Requirable
 
         if (!is_numeric($value)) {
             throw Exceptional::UnexpectedValue(
-                'Value is not numeric', null, $value
+                'Value is not numeric',
+                null,
+                $value
             );
         }
 
@@ -68,7 +72,7 @@ class Sanitizer implements Requirable
     /**
      * Get value as float
      */
-    public function asFloat($default=null): ?float
+    public function asFloat($default = null): ?float
     {
         if (null === ($value = $this->prepareValue($default))) {
             return null;
@@ -76,7 +80,9 @@ class Sanitizer implements Requirable
 
         if (!is_numeric($value)) {
             throw Exceptional::UnexpectedValue(
-                'Value is not numeric', null, $value
+                'Value is not numeric',
+                null,
+                $value
             );
         }
 
@@ -86,7 +92,7 @@ class Sanitizer implements Requirable
     /**
      * Get value as string
      */
-    public function asString($default=null): ?string
+    public function asString($default = null): ?string
     {
         if (null === ($value = $this->prepareValue($default))) {
             return null;
@@ -98,7 +104,7 @@ class Sanitizer implements Requirable
     /**
      * Get value as slug string
      */
-    public function asSlug($default=null): ?string
+    public function asSlug($default = null): ?string
     {
         if (null === ($value = $this->prepareValue($default))) {
             return null;
@@ -108,7 +114,9 @@ class Sanitizer implements Requirable
 
         if (!preg_match('/^[a-z0-9]([a-z0-9-_]*[a-z0-9])?$/', $value)) {
             throw Exceptional::UnexpectedValue(
-                'Value is not a valid slug', null, $value
+                'Value is not a valid slug',
+                null,
+                $value
             );
         }
 
@@ -118,7 +126,7 @@ class Sanitizer implements Requirable
     /**
      * Get value as Guid string
      */
-    public function asGuid($default=null): ?string
+    public function asGuid($default = null): ?string
     {
         if (null === ($value = $this->prepareValue($default))) {
             return null;
@@ -128,7 +136,9 @@ class Sanitizer implements Requirable
 
         if (!preg_match('/^[a-z0-9]{8}-(?:[a-z0-9]{4}-){3}[a-z0-9]{12}$/', $value)) {
             throw Exceptional::UnexpectedValue(
-                'Value is not a valid GUID', null, $value
+                'Value is not a valid GUID',
+                null,
+                $value
             );
         }
 
@@ -138,7 +148,7 @@ class Sanitizer implements Requirable
     /**
      * Prepare output value
      */
-    protected function prepareValue($default=null)
+    protected function prepareValue($default = null)
     {
         $value = $this->value ?? $default;
 
