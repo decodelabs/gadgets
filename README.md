@@ -9,13 +9,29 @@
 
 Useful tools for building PHP libraries.
 
+## Installation
 
-## Method chaining
+Install via Composer:
+
+```bash
+composer require decodelabs/gadgets
+```
+
+### PHP version
+
+_Please note, the final v1 releases of all Decode Labs libraries will target **PHP8** or above._
+
+Current support for earlier versions of PHP will be phased out in the coming months.
+
+
+## Usage
+
+### Method chaining
 
 The <code>Then</code> interface for structured method chaining has been moved to its own project, [Fluidity](https://github.com/decodelabs/fluidity/).
 
 
-## Constraints
+### Constraints
 ```php
 namespace DecodeLabs\Gadgets\Constraint;
 
@@ -47,7 +63,7 @@ interface Requirable
 Add common constraints to your objects.
 
 
-## Sanitizer
+### Sanitizer
 Add basic input value sanitizing to your objects by returning a <code>Sanitizer</code>.
 
 ```php
