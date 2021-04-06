@@ -11,7 +11,10 @@ namespace DecodeLabs\Gadgets\Constraint;
 
 trait ReadOnlyTrait
 {
-    protected $required = false;
+    /**
+     * @var bool
+     */
+    protected $readOnly = false;
 
     /**
      * Is this readOnly?

@@ -19,10 +19,15 @@ class Sanitizer implements Requirable
 {
     use RequirableTrait;
 
+    /**
+     * @var mixed
+     */
     protected $value;
 
     /**
      * Init with raw value
+     *
+     * @param mixed $value
      */
     public function __construct($value, bool $required = true)
     {
@@ -33,6 +38,8 @@ class Sanitizer implements Requirable
 
     /**
      * Get original value
+     *
+     * @return mixed
      */
     public function asIs()
     {
@@ -41,6 +48,8 @@ class Sanitizer implements Requirable
 
     /**
      * Get value as boolean
+     *
+     * @param mixed $default
      */
     public function asBool($default = null): ?bool
     {
@@ -53,6 +62,8 @@ class Sanitizer implements Requirable
 
     /**
      * Get value as int
+     *
+     * @param mixed $default
      */
     public function asInt($default = null): ?int
     {
@@ -73,6 +84,8 @@ class Sanitizer implements Requirable
 
     /**
      * Get value as float
+     *
+     * @param mixed $default
      */
     public function asFloat($default = null): ?float
     {
@@ -93,6 +106,8 @@ class Sanitizer implements Requirable
 
     /**
      * Get value as string
+     *
+     * @param mixed $default
      */
     public function asString($default = null): ?string
     {
@@ -105,6 +120,8 @@ class Sanitizer implements Requirable
 
     /**
      * Get value as slug string
+     *
+     * @param mixed $default
      */
     public function asSlug($default = null): ?string
     {
@@ -127,6 +144,8 @@ class Sanitizer implements Requirable
 
     /**
      * Get value as Guid string
+     *
+     * @param mixed $default
      */
     public function asGuid($default = null): ?string
     {
@@ -149,6 +168,9 @@ class Sanitizer implements Requirable
 
     /**
      * Prepare output value
+     *
+     * @param mixed $default
+     * @return mixed
      */
     protected function prepareValue($default = null)
     {
@@ -169,6 +191,8 @@ class Sanitizer implements Requirable
 
     /**
      * Sanitize value using callback
+     *
+     * @return mixed
      */
     public function with(callable $callback)
     {

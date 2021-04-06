@@ -11,6 +11,9 @@ namespace DecodeLabs\Gadgets\Constraint;
 
 trait NullableTrait
 {
+    /**
+     * @var bool
+     */
     protected $nullable = false;
 
     /**

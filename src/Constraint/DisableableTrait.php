@@ -11,6 +11,9 @@ namespace DecodeLabs\Gadgets\Constraint;
 
 trait DisableableTrait
 {
+    /**
+     * @var bool
+     */
     protected $disabled = false;
 
     /**
