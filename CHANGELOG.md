@@ -1,3 +1,7 @@
+## v0.7.1 (2021-04-06)
+* Fixed ReadOnlyTrait member reference
+* Updated for max PHPStan conformance
+
 ## v0.7.0 (2021-03-18)
 * Enabled PHP8 testing
 * Removed Then interface (for Fluidity)
