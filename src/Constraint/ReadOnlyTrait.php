@@ -26,6 +26,8 @@ trait ReadOnlyTrait
 
     /**
      * Set readOnly
+     *
+     * @return $this
      */
     public function setReadOnly(bool $readOnly): ReadOnly
     {

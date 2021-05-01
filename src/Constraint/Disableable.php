@@ -12,5 +12,9 @@ namespace DecodeLabs\Gadgets\Constraint;
 interface Disableable
 {
     public function isDisabled(): bool;
+
+    /**
+     * @return $this
+     */
     public function setDisabled(bool $disabled): Disableable;
 }
