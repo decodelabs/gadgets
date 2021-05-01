@@ -1,3 +1,6 @@
+## v0.7.2 (2021-05-01)
+* Improved return type hints
+
 ## v0.7.1 (2021-04-06)
 * Fixed ReadOnlyTrait member reference
 * Updated for max PHPStan conformance
