@@ -12,5 +12,9 @@ namespace DecodeLabs\Gadgets\Constraint;
 interface ReadOnly
 {
     public function isReadOnly(): bool;
+
+    /**
+     * @return $this
+     */
     public function setReadOnly(bool $readOnly): ReadOnly;
 }

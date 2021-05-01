@@ -26,6 +26,8 @@ trait NullableTrait
 
     /**
      * Set nullable
+     *
+     * @return $this
      */
     public function setNullable(bool $nullable): Nullable
     {

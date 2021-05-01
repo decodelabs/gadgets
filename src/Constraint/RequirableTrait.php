@@ -26,6 +26,8 @@ trait RequirableTrait
 
     /**
      * Set required
+     *
+     * @return $this
      */
     public function setRequired(bool $required): Requirable
     {

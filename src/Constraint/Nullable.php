@@ -12,5 +12,9 @@ namespace DecodeLabs\Gadgets\Constraint;
 interface Nullable
 {
     public function isNullable(): bool;
+
+    /**
+     * @return $this
+     */
     public function setNullable(bool $nullable): Nullable;
 }

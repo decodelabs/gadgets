@@ -12,5 +12,9 @@ namespace DecodeLabs\Gadgets\Constraint;
 interface Requirable
 {
     public function isRequired(): bool;
+
+    /**
+     * @return $this
+     */
     public function setRequired(bool $required): Requirable;
 }

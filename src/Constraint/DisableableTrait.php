@@ -26,6 +26,8 @@ trait DisableableTrait
 
     /**
      * Set disabled
+     *
+     * @return $this
      */
     public function setDisabled(bool $disabled): Disableable
     {
