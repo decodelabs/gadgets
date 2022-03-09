@@ -115,7 +115,17 @@ class Sanitizer implements Requirable
             return null;
         }
 
-        return (string)$value;
+        if (
+            is_scalar($value) ||
+            (
+                is_object($value) &&
+                method_exists($value, '__toString')
+            )
+        ) {
+            return (string)$value;
+        }
+
+        return null;
     }
 
     /**
@@ -125,7 +135,7 @@ class Sanitizer implements Requirable
      */
     public function asSlug($default = null): ?string
     {
-        if (null === ($value = $this->prepareValue($default))) {
+        if (null === ($value = $this->asString($default))) {
             return null;
         }
 
@@ -149,7 +159,7 @@ class Sanitizer implements Requirable
      */
     public function asGuid($default = null): ?string
     {
-        if (null === ($value = $this->prepareValue($default))) {
+        if (null === ($value = $this->asString($default))) {
             return null;
         }
 

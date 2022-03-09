@@ -9,29 +9,29 @@ declare(strict_types=1);
 
 namespace DecodeLabs\Gadgets\Constraint;
 
-trait ReadOnlyTrait
+trait ImmutableTrait
 {
     /**
      * @var bool
      */
-    protected $readOnly = false;
+    protected $immutable = false;
 
     /**
-     * Is this readOnly?
+     * Is this immutable?
      */
-    public function isReadOnly(): bool
+    public function isImmutable(): bool
     {
-        return $this->readOnly;
+        return $this->immutable;
     }
 
     /**
-     * Set readOnly
+     * Set immutable
      *
      * @return $this
      */
-    public function setReadOnly(bool $readOnly): ReadOnly
+    public function setImmutable(bool $immutable): Immutable
     {
-        $this->readOnly = $readOnly;
+        $this->immutable = $immutable;
         return $this;
     }
 }

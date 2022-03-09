@@ -9,12 +9,12 @@ declare(strict_types=1);
 
 namespace DecodeLabs\Gadgets\Constraint;
 
-interface ReadOnly
+interface Immutable
 {
-    public function isReadOnly(): bool;
+    public function isImmutable(): bool;
 
     /**
      * @return $this
      */
-    public function setReadOnly(bool $readOnly): ReadOnly;
+    public function setImmutable(bool $immutable): Immutable;
 }
