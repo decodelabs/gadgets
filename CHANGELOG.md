@@ -1,3 +1,7 @@
+## v0.8.0 (2022-03-09)
+* Transitioned ReadOnly to Immutable
+* Updated PHPStan and ECS dependencies
+
 ## v0.7.2 (2021-05-01)
 * Improved return type hints
 
