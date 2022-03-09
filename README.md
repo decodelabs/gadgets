@@ -47,10 +47,10 @@ interface Nullable
     public function setNullable(bool $nullable): Nullable;
 }
 
-interface ReadOnly
+interface Immutable
 {
-    public function isReadOnly(): bool;
-    public function setReadOnly(bool $readOnly): ReadOnly;
+    public function isImmutable(): bool;
+    public function setImmutable(bool $immutable): Immutable;
 }
 
 interface Requirable
