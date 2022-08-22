@@ -13,7 +13,7 @@ jobs:
     strategy:
       matrix:
         operating-system: [ubuntu-latest]
-        php-versions: ['7.2', '7.3', '7.4', '8.0', '8.1']
+        php-versions: ['8.0', '8.1']
     name: PHP ${{ matrix.php-versions }} Test on ${{ matrix.operating-system }}
 
     steps:
@@ -42,5 +42,8 @@ jobs:
     - name: Install dependencies
       run: composer install --prefer-dist --no-progress
 
-    - name: Run test suite
+    - name: Run PHPStan
       run: composer run-script analyze -- --no-interaction
+
+    - name: Run ECS
+      run: composer run-script psr12
