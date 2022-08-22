@@ -1,3 +1,7 @@
+* Removed PHP7 compatibility
+* Updated ECS to v11
+* Updated PHPUnit to v9
+
 ## v0.8.0 (2022-03-09)
 * Transitioned ReadOnly to Immutable
 * Updated PHPStan and ECS dependencies
