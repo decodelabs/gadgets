@@ -19,18 +19,17 @@ class Sanitizer implements Requirable
 {
     use RequirableTrait;
 
-    /**
-     * @var mixed
-     */
-    protected $value;
+    protected mixed $value;
 
     /**
      * Init with raw value
      *
      * @param mixed $value
      */
-    public function __construct($value, bool $required = true)
-    {
+    public function __construct(
+        mixed $value,
+        bool $required = true
+    ) {
         $this->value = $value;
         $this->required = $required;
     }
@@ -38,20 +37,16 @@ class Sanitizer implements Requirable
 
     /**
      * Get original value
-     *
-     * @return mixed
      */
-    public function asIs()
+    public function asIs(): mixed
     {
         return $this->value;
     }
 
     /**
      * Get value as boolean
-     *
-     * @param mixed $default
      */
-    public function asBool($default = null): ?bool
+    public function asBool(mixed $default = null): ?bool
     {
         if (null === ($value = $this->prepareValue($default))) {
             return null;
@@ -62,10 +57,8 @@ class Sanitizer implements Requirable
 
     /**
      * Get value as int
-     *
-     * @param mixed $default
      */
-    public function asInt($default = null): ?int
+    public function asInt(mixed $default = null): ?int
     {
         if (null === ($value = $this->prepareValue($default))) {
             return null;
@@ -84,10 +77,8 @@ class Sanitizer implements Requirable
 
     /**
      * Get value as float
-     *
-     * @param mixed $default
      */
-    public function asFloat($default = null): ?float
+    public function asFloat(mixed $default = null): ?float
     {
         if (null === ($value = $this->prepareValue($default))) {
             return null;
@@ -106,10 +97,8 @@ class Sanitizer implements Requirable
 
     /**
      * Get value as string
-     *
-     * @param mixed $default
      */
-    public function asString($default = null): ?string
+    public function asString(mixed $default = null): ?string
     {
         if (null === ($value = $this->prepareValue($default))) {
             return null;
@@ -130,10 +119,8 @@ class Sanitizer implements Requirable
 
     /**
      * Get value as slug string
-     *
-     * @param mixed $default
      */
-    public function asSlug($default = null): ?string
+    public function asSlug(mixed $default = null): ?string
     {
         if (null === ($value = $this->asString($default))) {
             return null;
@@ -154,10 +141,8 @@ class Sanitizer implements Requirable
 
     /**
      * Get value as Guid string
-     *
-     * @param mixed $default
      */
-    public function asGuid($default = null): ?string
+    public function asGuid(mixed $default = null): ?string
     {
         if (null === ($value = $this->asString($default))) {
             return null;
@@ -178,11 +163,8 @@ class Sanitizer implements Requirable
 
     /**
      * Prepare output value
-     *
-     * @param mixed $default
-     * @return mixed
      */
-    protected function prepareValue($default = null)
+    protected function prepareValue(mixed $default = null): mixed
     {
         $value = $this->value ?? $default;
 
@@ -201,10 +183,8 @@ class Sanitizer implements Requirable
 
     /**
      * Sanitize value using callback
-     *
-     * @return mixed
      */
-    public function with(callable $callback)
+    public function with(callable $callback): mixed
     {
         $value = $callback($this->value);
 

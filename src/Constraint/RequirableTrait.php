@@ -11,10 +11,7 @@ namespace DecodeLabs\Gadgets\Constraint;
 
 trait RequirableTrait
 {
-    /**
-     * @var bool
-     */
-    protected $required = false;
+    protected bool $required = false;
 
     /**
      * Is this required?

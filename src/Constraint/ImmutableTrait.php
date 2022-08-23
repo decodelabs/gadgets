@@ -11,10 +11,7 @@ namespace DecodeLabs\Gadgets\Constraint;
 
 trait ImmutableTrait
 {
-    /**
-     * @var bool
-     */
-    protected $immutable = false;
+    protected bool $immutable = false;
 
     /**
      * Is this immutable?
