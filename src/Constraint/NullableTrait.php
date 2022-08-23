@@ -11,10 +11,7 @@ namespace DecodeLabs\Gadgets\Constraint;
 
 trait NullableTrait
 {
-    /**
-     * @var bool
-     */
-    protected $nullable = false;
+    protected bool $nullable = false;
 
     /**
      * Is this nullable?

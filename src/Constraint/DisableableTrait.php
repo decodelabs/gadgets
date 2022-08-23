@@ -11,10 +11,7 @@ namespace DecodeLabs\Gadgets\Constraint;
 
 trait DisableableTrait
 {
-    /**
-     * @var bool
-     */
-    protected $disabled = false;
+    protected bool $disabled = false;
 
     /**
      * Is this disabled?
