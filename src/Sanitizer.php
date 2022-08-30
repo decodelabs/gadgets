@@ -12,8 +12,8 @@ namespace DecodeLabs\Gadgets;
 use Closure;
 
 use DecodeLabs\Exceptional;
-use DecodeLabs\Gadgets\Constraint\Requirable;
-use DecodeLabs\Gadgets\Constraint\RequirableTrait;
+use DecodeLabs\Tightrope\Manifest\Requirable;
+use DecodeLabs\Tightrope\Manifest\RequirableTrait;
 
 class Sanitizer implements Requirable
 {
