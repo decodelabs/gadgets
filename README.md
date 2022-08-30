@@ -25,35 +25,8 @@ The <code>Then</code> interface for structured method chaining has been moved to
 
 
 ### Constraints
-```php
-namespace DecodeLabs\Gadgets\Constraint;
 
-interface Disableable
-{
-    public function isDisabled(): bool;
-    public function setDisabled(bool $disabled): Disableable;
-}
-
-interface Nullable
-{
-    public function isNullable(): bool;
-    public function setNullable(bool $nullable): Nullable;
-}
-
-interface Immutable
-{
-    public function isImmutable(): bool;
-    public function setImmutable(bool $immutable): Immutable;
-}
-
-interface Requirable
-{
-    public function isRequired(): bool;
-    public function setRequired(bool $required): Requirable;
-}
-```
-
-Add common constraints to your objects.
+The <code>Constraints</code> interfaces have been moved to their own project, [Tightrope](https://github.com/decodelabs/tightrope/).
 
 
 ### Sanitizer
