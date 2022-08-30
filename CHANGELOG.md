@@ -1,3 +1,5 @@
+## v0.10.0 (2022-08-30)
+* Moved Constraints library to Tightrope
 * Updated CI environment
 
 ## v0.9.1 (2022-08-23)
